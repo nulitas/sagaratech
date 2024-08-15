@@ -12,7 +12,7 @@ const WhysSection: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-red-700 mb-6">
             WHY SAGARA IT CERTIFICATION?
           </h2>
-          <div className="mb-4 flex items-start">
+          <div className="mb-4 flex items-start ">
             <img
               src={credibility}
               alt="Global Credibility"
@@ -61,7 +61,7 @@ const WhysSection: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="md:w-1/2  mt-8 md:mt-0">
+        <div className="md:w-1/2 flex justify-center mt-8 md:mt-0">
           <img
             src={certification}
             alt="Certification"

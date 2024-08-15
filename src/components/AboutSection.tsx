@@ -13,9 +13,12 @@ const AboutSection: React.FC = () => {
             SAGARA IT CERTIFICATION
           </h2>
           <h3 className="text-2xl font-bold text-red-700 mb-4">
-            Join <span className="text-black">thousands</span> of professionals
-            who have elevated their skills and carved out success in the
-            technology industry. Start your journey to excellence with us today!
+            Join thousands {""}
+            <span className="text-black">
+              of professionals who have elevated their skills and carved out
+              success in the technology industry. Start your journey to
+              excellence with us today!{" "}
+            </span>
           </h3>
           <p className="text-gray-600">
             Boost your career prospects in the digital era with

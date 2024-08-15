@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { FaCode, FaCheckCircle, FaChartBar } from "react-icons/fa";
+import icon_cube from "/icon_cube.png";
+import icon_dashboard from "/icon_dashboard.png";
+import icon_user from "/icon_user.png";
 
 type CertificationType =
   | "Front End Developer"
@@ -34,14 +36,23 @@ const CertificationSection: React.FC = () => {
       image: "/frontend.png",
       details: [
         {
-          icon: <FaCode />,
+          icon: (
+            <img
+              src={icon_dashboard}
+              alt="Dashboard Icon"
+              className="w-6 h-6"
+            />
+          ),
           text: "Proficiency in frontend programming languages",
         },
         {
-          icon: <FaCheckCircle />,
+          icon: <img src={icon_cube} alt="Cube Icon" className="w-6 h-6" />,
           text: "Recognition as a qualified frontend developer",
         },
-        { icon: <FaChartBar />, text: "Enhance your career prospects" },
+        {
+          icon: <img src={icon_user} alt="User Icon" className="w-6 h-6" />,
+          text: "Enhance your career prospects",
+        },
       ],
     },
     "Back End Developer": {
@@ -93,15 +104,15 @@ const CertificationSection: React.FC = () => {
             </button>
           ))}
         </div>
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2">
+        <div className="flex flex-col md:flex-row items-center justify-center">
+          <div className="md:w-1/2 flex justify-center">
             <img
               src={selectedCertification.image}
               alt={selectedCertification.title}
               className="rounded-lg w-[500px]"
             />
           </div>
-          <div className="md:w-1/2 mt-8 md:mt-0 md:ml-8 text-left">
+          <div className="md:w-1/2 mt-8 md:mt-0 md:ml-8 text-center md:text-left">
             <h4 className="text-red-700 text-xl font-bold mb-4">
               {selectedCertification.title}
             </h4>
@@ -110,7 +121,10 @@ const CertificationSection: React.FC = () => {
             </p>
             <ul className="space-y-4">
               {selectedCertification.details.map((detail, index) => (
-                <li key={index} className="flex items-center">
+                <li
+                  key={index}
+                  className="flex items-center justify-center md:justify-start"
+                >
                   <div className="text-red-700 mr-3">{detail.icon}</div>
                   <p className="text-gray-600">{detail.text}</p>
                 </li>
