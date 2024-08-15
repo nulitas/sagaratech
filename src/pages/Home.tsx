@@ -1,6 +1,6 @@
 import React from "react";
 import HeroSection from "../components/Home/HeroSection";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Home/Navbar";
 import AboutSection from "../components/Home/AboutSection";
 import WhysSection from "../components/Home/WhysSection";
 import HowSection from "../components/Home/HowSection";

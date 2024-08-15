@@ -79,7 +79,7 @@ const CertificationSection: React.FC = () => {
 
   return (
     <section className="bg-white py-12">
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto text-center px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center mb-2">
           <div className="w-16 border-t-4 border-red-700"></div>
         </div>
@@ -89,12 +89,12 @@ const CertificationSection: React.FC = () => {
         <h3 className="text-3xl md:text-4xl font-bold text-red-700 mb-6">
           Our Certification
         </h3>
-        <div className="flex justify-center space-x-4 mb-8">
+        <div className="flex flex-wrap justify-center space-x-2 sm:space-x-4 mb-8">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setSelectedTab(tab)}
-              className={`px-4 py-2 rounded-md font-semibold ${
+              className={`px-2 sm:px-4 py-2 rounded-md font-semibold ${
                 selectedTab === tab
                   ? "bg-red-700 text-white"
                   : "bg-white text-gray-700 border"
@@ -105,11 +105,11 @@ const CertificationSection: React.FC = () => {
           ))}
         </div>
         <div className="flex flex-col md:flex-row items-center justify-center">
-          <div className="md:w-1/2 flex justify-center">
+          <div className="md:w-1/2 flex justify-center mb-6 md:mb-0">
             <img
               src={selectedCertification.image}
               alt={selectedCertification.title}
-              className="rounded-lg w-[500px]"
+              className="rounded-lg w-full max-w-xs md:max-w-md"
             />
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0 md:ml-8 text-center md:text-left">
