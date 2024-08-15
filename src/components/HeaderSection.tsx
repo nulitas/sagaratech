@@ -66,27 +66,27 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ onSearch }) => {
 
   return (
     <>
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex space-x-4">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 w-full md:w-auto">
           <button
-            className="flex items-center bg-white text-black px-4 py-2 rounded-md"
+            className="flex items-center bg-white text-black px-4 py-2 rounded-md w-full md:w-auto"
             onClick={handleOpenFilterModal}
           >
             <HiFilter className="mr-2" /> Filters
           </button>
           <button
-            className="flex items-center bg-[#a51535] text-white px-4 py-2 rounded-md"
+            className="flex items-center bg-[#a51535] text-white px-4 py-2 rounded-md w-full md:w-auto"
             onClick={handleOpenAddUserModal}
           >
             <FiUserPlus className="mr-2" /> Add User
           </button>
         </div>
-        <div className="flex items-center space-x-4">
-          <div className="relative">
+        <div className="flex items-center space-x-4 mt-4 md:mt-0 w-full md:w-auto">
+          <div className="relative w-full md:w-64">
             <input
               type="text"
               placeholder="Search"
-              className="border border-gray-300 rounded-md p-2 pl-8 w-64"
+              className="border border-gray-300 rounded-md p-2 pl-8 w-full"
               value={searchTerm}
               onChange={handleSearchChange}
             />

@@ -12,21 +12,20 @@ const Students: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex">
-      <main className="flex-1">
-        <Header />
-
-        <div className="p-6">
+    <div className="min-h-screen bg-gray-100 flex flex-col">
+      <Header />
+      <main className="flex-1 p-6">
+        <div className="w-full mb-6">
           <HeaderSection onSearch={handleSearch} />
         </div>
 
-        <div className="p-6 bg-white shadow rounded mb-6">
-          <h2 className="text-lg font-semibold mb-4">Data Student</h2>
+        <div className="grid grid-cols-1">
+          <div className="bg-white shadow rounded w-full p-6">
+            <h2 className="text-lg font-semibold mb-4">Student List</h2>
 
-          <div className="overflow-x-auto">
             <StudentTable searchTerm={searchTerm} />
+            <Pagination />
           </div>
-          <Pagination />
         </div>
       </main>
     </div>
