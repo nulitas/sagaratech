@@ -21,7 +21,7 @@ const Students: React.FC = () => {
         </div>
 
         <div className="p-6 bg-white shadow rounded mb-6">
-          <h2 className="text-lg font-semibold mb-4">Student List</h2>
+          <h2 className="text-lg font-semibold mb-4">Data Student</h2>
 
           <StudentTable searchTerm={searchTerm} />
           <Pagination />

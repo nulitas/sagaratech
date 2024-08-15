@@ -138,15 +138,15 @@ const StudentTable: React.FC<{ searchTerm: string }> = ({ searchTerm }) => {
               <td className="py-3 px-4">{student.instance}</td>
               <td className="py-3 px-4">{student.createdAt}</td>
               <td className="py-3 px-4">
-                <div className="flex space-x-2">
+                <div className="flex space-x-2 justify-center">
+                  <button className="text-[#a51535]">
+                    <AiOutlineDelete />
+                  </button>
                   <button
-                    className="text-blue-600"
+                    className="text-[#f8af4e]"
                     onClick={() => handleOpenModal(student)}
                   >
                     <AiOutlineEdit />
-                  </button>
-                  <button className="text-[#a51535]">
-                    <AiOutlineDelete />
                   </button>
                 </div>
               </td>

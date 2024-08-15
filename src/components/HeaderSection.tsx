@@ -14,7 +14,12 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = React.useState("");
   const [openFilterModal, setOpenFilterModal] = React.useState(false);
   const [openAddUserModal, setOpenAddUserModal] = React.useState(false);
+  const [openSettingModal, setOpenSettingModal] = React.useState(false);
   const [filterButtonPosition, setFilterButtonPosition] = React.useState({
+    top: 0,
+    left: 0,
+  });
+  const [settingButtonPosition, setSettingButtonPosition] = React.useState({
     top: 0,
     left: 0,
   });
@@ -37,6 +42,17 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ onSearch }) => {
   const handleCloseFilterModal = () => setOpenFilterModal(false);
   const handleOpenAddUserModal = () => setOpenAddUserModal(true);
   const handleCloseAddUserModal = () => setOpenAddUserModal(false);
+
+  const handleOpenSettingModal = (event: React.MouseEvent) => {
+    const button = event.currentTarget.getBoundingClientRect();
+    setSettingButtonPosition({
+      top: button.bottom + window.scrollY,
+      left: button.left + window.scrollX,
+    });
+    setOpenSettingModal(true);
+  };
+
+  const handleCloseSettingModal = () => setOpenSettingModal(false);
 
   const handleAddFilter = () => {
     console.log("Filter added!");
@@ -76,7 +92,10 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ onSearch }) => {
             />
             <AiOutlineSearch className="absolute left-2 top-2.5 text-gray-500" />
           </div>
-          <button className="flex items-center bg-gray-100 text-gray-600 p-2 rounded-md">
+          <button
+            className="flex items-center bg-gray-100 text-gray-600 p-2 rounded-md"
+            onClick={handleOpenSettingModal}
+          >
             <AiOutlineSetting className="w-6 h-6" />
           </button>
         </div>
@@ -125,6 +144,51 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ onSearch }) => {
           >
             Add Filter
           </button>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openSettingModal}
+        onClose={handleCloseSettingModal}
+        styles={{
+          modal: {
+            position: "absolute",
+            top: `${settingButtonPosition.top}px`,
+            left: `${settingButtonPosition.left - 150}px`,
+            margin: 0,
+            padding: "0.5rem",
+            boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+            width: "200px",
+            borderRadius: "8px",
+          },
+          overlay: {
+            background: "transparent",
+          },
+        }}
+        center={false}
+        showCloseIcon={false}
+      >
+        <div className="p-2">
+          <label className="flex items-center space-x-2">
+            <input type="checkbox" className="form-checkbox" />
+            <span>Full Name</span>
+          </label>
+          <label className="flex items-center space-x-2 mt-2">
+            <input type="checkbox" className="form-checkbox" checked />
+            <span>Email Address</span>
+          </label>
+          <label className="flex items-center space-x-2 mt-2">
+            <input type="checkbox" className="form-checkbox" checked />
+            <span>Phone Number</span>
+          </label>
+          <label className="flex items-center space-x-2 mt-2">
+            <input type="checkbox" className="form-checkbox" checked />
+            <span>Instance</span>
+          </label>
+          <label className="flex items-center space-x-2 mt-2">
+            <input type="checkbox" className="form-checkbox" checked />
+            <span>Created At</span>
+          </label>
         </div>
       </Modal>
 
