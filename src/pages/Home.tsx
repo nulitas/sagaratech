@@ -1,11 +1,11 @@
 import React from "react";
-import HeroSection from "../components/HeroSection";
+import HeroSection from "../components/Home/HeroSection";
 import Navbar from "../components/Navbar";
-import AboutSection from "../components/AboutSection";
-import WhysSection from "../components/WhysSection";
-import HowSection from "../components/HowSection";
-import CertificationSection from "../components/CertifiactionSection";
-import Footer from "../components/Footer";
+import AboutSection from "../components/Home/AboutSection";
+import WhysSection from "../components/Home/WhysSection";
+import HowSection from "../components/Home/HowSection";
+import CertificationSection from "../components/Home/CertifiactionSection";
+import Footer from "../components/Home/Footer";
 const Home: React.FC = () => {
   return (
     <>
