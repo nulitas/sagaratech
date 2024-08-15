@@ -4,6 +4,7 @@ import { FiUserPlus } from "react-icons/fi";
 import { AiOutlineSearch, AiOutlineSetting } from "react-icons/ai";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
+import "../CustomModalStyles.css";
 
 interface HeaderSectionProps {
   onSearch: (term: string) => void;
@@ -11,7 +12,12 @@ interface HeaderSectionProps {
 
 const HeaderSection: React.FC<HeaderSectionProps> = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = React.useState("");
-  const [openModal, setOpenModal] = React.useState(false);
+  const [openFilterModal, setOpenFilterModal] = React.useState(false);
+  const [openAddUserModal, setOpenAddUserModal] = React.useState(false);
+  const [filterButtonPosition, setFilterButtonPosition] = React.useState({
+    top: 0,
+    left: 0,
+  });
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const term = e.target.value;
@@ -19,19 +25,42 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ onSearch }) => {
     onSearch(term);
   };
 
-  const handleOpenModal = () => setOpenModal(true);
-  const handleCloseModal = () => setOpenModal(false);
+  const handleOpenFilterModal = (event: React.MouseEvent) => {
+    const button = event.currentTarget.getBoundingClientRect();
+    setFilterButtonPosition({
+      top: button.bottom + window.scrollY,
+      left: button.left + window.scrollX,
+    });
+    setOpenFilterModal(true);
+  };
+
+  const handleCloseFilterModal = () => setOpenFilterModal(false);
+  const handleOpenAddUserModal = () => setOpenAddUserModal(true);
+  const handleCloseAddUserModal = () => setOpenAddUserModal(false);
+
+  const handleAddFilter = () => {
+    console.log("Filter added!");
+    handleCloseFilterModal();
+  };
+
+  const handleAddUser = () => {
+    console.log("User added!");
+    handleCloseAddUserModal();
+  };
 
   return (
     <>
       <div className="flex justify-between items-center mb-4">
         <div className="flex space-x-4">
-          <button className="flex items-center bg-white text-black px-4 py-2 rounded-md">
+          <button
+            className="flex items-center bg-white text-black px-4 py-2 rounded-md"
+            onClick={handleOpenFilterModal}
+          >
             <HiFilter className="mr-2" /> Filters
           </button>
           <button
             className="flex items-center bg-[#a51535] text-white px-4 py-2 rounded-md"
-            onClick={handleOpenModal}
+            onClick={handleOpenAddUserModal}
           >
             <FiUserPlus className="mr-2" /> Add User
           </button>
@@ -53,10 +82,56 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ onSearch }) => {
         </div>
       </div>
 
-      <Modal open={openModal} onClose={handleCloseModal} center>
+      <Modal
+        open={openFilterModal}
+        onClose={handleCloseFilterModal}
+        styles={{
+          modal: {
+            position: "absolute",
+            top: `${filterButtonPosition.top}px`,
+            left: `${filterButtonPosition.left}px`,
+            margin: 0,
+            padding: "1rem",
+            boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+            width: "250px",
+          },
+          overlay: {
+            background: "transparent",
+          },
+        }}
+        center={false}
+        showCloseIcon={false}
+      >
+        <div>
+          <select className="border border-gray-300 rounded-md p-2 w-full mb-2">
+            <option>Instance</option>
+            <option>Name</option>
+            <option>Email</option>
+          </select>
+          <input
+            type="text"
+            className="border border-gray-300 rounded-md p-2 w-full mb-2"
+            value="is"
+            disabled
+          />
+          <input
+            type="text"
+            placeholder="Enter condition"
+            className="border border-gray-300 rounded-md p-2 w-full mb-4"
+          />
+          <button
+            className="bg-[#a51535] text-white px-4 py-2 rounded-md w-full"
+            onClick={handleAddFilter}
+          >
+            Add Filter
+          </button>
+        </div>
+      </Modal>
+
+      <Modal open={openAddUserModal} onClose={handleCloseAddUserModal} center>
         <div className="p-6">
           <h2 className="text-xl font-semibold mb-4">Add New Student</h2>
-          <form>
+          <form onSubmit={handleAddUser}>
             <div className="grid grid-cols-2 gap-4">
               <input
                 type="text"
@@ -102,7 +177,7 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ onSearch }) => {
             </div>
             <div className="mt-6 flex justify-end">
               <button
-                type="button"
+                type="submit"
                 className="bg-[#a51535] text-white px-6 py-2 rounded-md"
               >
                 Save
