@@ -7,7 +7,10 @@ import logo from "/logo.png";
 const Sidebar: React.FC = () => {
   return (
     <aside className="w-64 bg-[#1c1c1c] text-white p-5">
-      <img src={logo} alt="logo" />
+      <Link to="/">
+        <img src={logo} alt="logo" />
+      </Link>
+
       <nav>
         <span className="mt-8 flex items-center p-2 text-gray-300 rounded">
           Menu
@@ -15,7 +18,7 @@ const Sidebar: React.FC = () => {
         <ul>
           <li className="mb-3">
             <Link
-              to="/"
+              to="dashboard"
               className="flex items-center p-2 text-gray-300 hover:bg-[#a51535] rounded"
             >
               <RxDashboard />
