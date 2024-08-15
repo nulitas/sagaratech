@@ -8,13 +8,13 @@ import { FaChartLine } from "react-icons/fa6";
 
 const Dashboard: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex">
-      <main className="flex-1">
-        <Header />
-        <div className="w-full p-6">
+    <div className="min-h-screen bg-gray-100 flex flex-col">
+      <Header />
+      <main className="flex-1 p-6">
+        <div className="w-full mb-6">
           <DateCard />
         </div>
-        <div className="grid grid-cols-3 gap-6 mb-6  p-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
           <StatsCard
             title="Total Students"
             value={513}
@@ -43,10 +43,12 @@ const Dashboard: React.FC = () => {
             iconColor="text-[#4ad991]"
           />
         </div>
-        <div className="p-6">
-          <div className=" bg-white shadow rounded ">
-            <h2 className="text-lg font-semibold mb-4 p-4">Student</h2>
-            <StudentChart />
+        <div className="grid grid-cols-1">
+          <div className="bg-white shadow rounded w-full p-6">
+            <h2 className="text-lg font-semibold mb-4">Student</h2>
+            <div className="w-full overflow-x-auto">
+              <StudentChart />
+            </div>
           </div>
         </div>
       </main>

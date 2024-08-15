@@ -23,7 +23,9 @@ const Students: React.FC = () => {
         <div className="p-6 bg-white shadow rounded mb-6">
           <h2 className="text-lg font-semibold mb-4">Data Student</h2>
 
-          <StudentTable searchTerm={searchTerm} />
+          <div className="overflow-x-auto">
+            <StudentTable searchTerm={searchTerm} />
+          </div>
           <Pagination />
         </div>
       </main>
