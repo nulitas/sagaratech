@@ -31,7 +31,7 @@ const CertificationSection: React.FC = () => {
     "Front End Developer": {
       title: "Front End Certification",
       description: "",
-      image: "../../public/frontend.png",
+      image: "/frontend.png",
       details: [
         {
           icon: <FaCode />,
@@ -47,19 +47,19 @@ const CertificationSection: React.FC = () => {
     "Back End Developer": {
       title: "Back End Certification",
       description: "Description for Back End Developer",
-      image: "../../public/frontend.png",
+      image: "/frontend.png",
       details: [],
     },
     "Quality Assurance": {
       title: "Quality Assurance Certification",
       description: "Description for Quality Assurance",
-      image: "../../public/frontend.png",
+      image: "/frontend.png",
       details: [],
     },
     "UI/UX Design": {
       title: "UI/UX Design Certification",
       description: "Description for UI/UX Design",
-      image: "../../public/frontend.png",
+      image: "/frontend.png",
       details: [],
     },
   };

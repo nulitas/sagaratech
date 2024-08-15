@@ -6,7 +6,7 @@ import {
   FaLaptopCode,
   FaCertificate,
 } from "react-icons/fa";
-
+import it_guy from "/it_guy.png";
 const HowSection: React.FC = () => {
   const steps = [
     {
@@ -61,7 +61,7 @@ const HowSection: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center w-full">
           <div className="md:w-1/2 flex justify-center">
             <img
-              src="../../public/it_guy.png"
+              src={it_guy}
               alt="IT Certification"
               className="rounded-full shadow-lg w-[500px]"
             />

@@ -1,15 +1,11 @@
 import React from "react";
-
+import logoFooter from "/logo.png";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-black text-white py-10">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <img
-            src="../../public/logo.png"
-            alt="Sagara Tech Logo"
-            className="mb-4"
-          />
+          <img src={logoFooter} alt="Sagara Tech Logo" className="mb-4" />
           <p>
             Plan, build, grow digital products. Continuously delivering impact.
           </p>

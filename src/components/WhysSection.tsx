@@ -1,4 +1,8 @@
 import React from "react";
+import credibility from "/3_credibility.svg";
+import empower from "/3_empowering.svg";
+import validation from "/3_validation.svg";
+import certification from "/certifications.png";
 
 const WhysSection: React.FC = () => {
   return (
@@ -10,7 +14,7 @@ const WhysSection: React.FC = () => {
           </h2>
           <div className="mb-4 flex items-start">
             <img
-              src="../../public/3_credibility.svg"
+              src={credibility}
               alt="Global Credibility"
               className="w-8 h-8 mr-4"
             />
@@ -26,7 +30,7 @@ const WhysSection: React.FC = () => {
           </div>
           <div className="mb-4 flex items-start">
             <img
-              src="../../public/3_empowering.svg"
+              src={empower}
               alt="Empowering Careers"
               className="w-8 h-8 mr-4"
             />
@@ -42,7 +46,7 @@ const WhysSection: React.FC = () => {
           </div>
           <div className="mb-4 flex items-start">
             <img
-              src="../../public/3_validation.svg"
+              src={validation}
               alt="Expertise Validation"
               className="w-8 h-8 mr-4"
             />
@@ -59,7 +63,7 @@ const WhysSection: React.FC = () => {
         </div>
         <div className="md:w-1/2  mt-8 md:mt-0">
           <img
-            src="../../public/certifications.png"
+            src={certification}
             alt="Certification"
             className="rounded-lg shadow-lg w-[500px]"
           />

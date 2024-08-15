@@ -5,7 +5,7 @@ const HeroSection: React.FC = () => {
     <section
       className="relative bg-cover bg-center text-white"
       style={{
-        backgroundImage: "url('../../public/hero.jpg')",
+        backgroundImage: "url('/hero.jpg')",
       }}
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between py-24">
