@@ -1,28 +1,20 @@
-# SagaraTech
+# SagaraTech Dashboard
 
-<table>
-<tr>
-<td>
-  Ini sebuah aplikasi Dashboard untuk IT Certification di SagaraTech.
-</td>
-</tr>
-</table>
+> An IT Certification Management Dashboard for SagaraTech.
 
-## Site
+## ✨ About The Project
+This platform serves as a central hub for users and administrators to manage IT certifications, track progress, and review analytics.
 
-Live : https://sagaratech.vercel.app/
+**Live Site:** [https://sagaratech.vercel.app/](https://sagaratech.vercel.app/)
 
-## Usage
+## 🚀 Usage
 
-### Bug / Feature Request
+### Bug & Feature Requests
+If you find a bug (e.g., website cannot handle queries or gives unexpected results), please open an issue [here](https://github.com/nulitas/sagaratech/issues/new) including the query and expected result.
 
-Jika menemukan bug (situs web tidak dapat menangani kueri dan/atau memberikan hasil yang tidak diinginkan), silakan buka masalah [di sini](https://github.com/nulitas/sagaratech/issues/new) dengan menyertakan kueri penelusuran dan hasil yang diharapkan.
+## 🛠️ Built With
+- **[React.js / TypeScript](https://react.dev/)**
+- **[Tailwind CSS](https://tailwindcss.com/)** - UI Styling
 
-## Built with
-
-- [React.js - TypeScript](https://react.dev/) - Build user interfaces out of individual pieces called components written in JavaScript.
-- [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
-
-## License
-
-MIT © [Andra ](https://github.com/nulitas)
+## 📝 License
+Distributed under the MIT License © [Andra](https://github.com/nulitas)
